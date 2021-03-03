@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     #category
     get "/categories" => "categories#index"
-    # get "/categories/:id" => "categories#show"
+    get "/categories/:id" => "categories#show"
 
     #upvote
     # post "/upvotes" => "upvotes#create"
