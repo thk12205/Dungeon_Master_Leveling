@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     get "/categories/:id" => "categories#show"
 
     #upvote
-    # post "/upvotes" => "upvotes#create"
-    # delete "/upvotes/:id" => "upvotes#delete"
+    post "/upvotes" => "upvotes#create"
+    delete "/upvotes/:id" => "upvotes#delete"
 
   end
 end
