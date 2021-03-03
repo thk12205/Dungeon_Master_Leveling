@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
 
     #category
-    # get "/categories" => "categories#index"
+    get "/categories" => "categories#index"
     # get "/categories/:id" => "categories#show"
 
     #upvote
