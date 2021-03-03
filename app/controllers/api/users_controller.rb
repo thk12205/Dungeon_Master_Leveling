@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
     )
     if @user.save
       render "show.json.jb"
-      # render json: { message: "@ created successfully" }, status: :created
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
@@ -21,19 +20,30 @@ class Api::UsersController < ApplicationController
   # get "/users/:id" => "users#show"
 
   def show
-    #@user = User.find_by(id:params[:id])
+    @user = User.find_by(id:params[:id])
+    render "show.json.jb"
   end
-
+  
   # update "/users/:id" => "users#update"
-
+  
   def update
-
+    @user = User.find_by(id:params[:id])
+    @user.username = params[:username] || @user.username
+    #no email changing
+    #maybe change pw later
+    if @user.save
+      render "show.json.jb"
+    else
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
+    end
   end
-
+  
   # destroy "/users/:id" => "users#destroy"
-
+  
   def destroy
-
-  end  
+    @user = User.find_by(id:params[:id])
+    @user.destroy
+    render json: { message: "User destroyed successfully~"}
+  end
 
 end

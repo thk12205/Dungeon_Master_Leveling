@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
     #user
     post "/users" => "users#create"
-    # get "/users/:id" => "users#show"
-    # update "/users/:id" => "users#update"
-    # delete "/users/:id" => "users#destroy"
+    get "/users/:id" => "users#show"
+    patch "/users/:id" => "users#update"
+    delete "/users/:id" => "users#destroy"
 
 
     #category
