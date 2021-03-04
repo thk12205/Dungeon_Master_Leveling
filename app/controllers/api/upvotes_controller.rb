@@ -5,7 +5,7 @@ class Api::UpvotesController < ApplicationController
 
   def create
     @upvote = Upvote.new(
-      user_id: params[:user_id],
+      user_id: current_user.id #add current user logic
       article_id: params[:article_id]
     )
     if @upvote.save
