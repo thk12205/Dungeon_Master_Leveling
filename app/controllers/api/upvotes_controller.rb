@@ -1,11 +1,10 @@
 class Api::UpvotesController < ApplicationController
 
-  # post "/upvotes" => "upvotes#create"
-
+  before_action :authenticate_user
 
   def create
     @upvote = Upvote.new(
-      user_id: current_user.id #add current user logic
+      user_id: current_user.id, #add current user logic
       article_id: params[:article_id]
     )
     if @upvote.save
@@ -15,7 +14,7 @@ class Api::UpvotesController < ApplicationController
     end
   end
   
-  # delete "/upvotes/:id" => "upvotes#delete"
+
   def delete
     @upvote = Upvote.find_by(id:params[:id])
     @upvote.destroy
