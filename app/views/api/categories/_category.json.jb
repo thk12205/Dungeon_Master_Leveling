@@ -2,5 +2,6 @@
   id: category.id,
   name: category.name,
   description: category.description,
-  img_url: category.img_url
+  img_url: category.img_url,
+  articles: category.articles
 }

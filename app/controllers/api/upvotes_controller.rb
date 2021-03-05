@@ -13,9 +13,10 @@ class Api::UpvotesController < ApplicationController
       render json: { errors: @upvote.errors.full_messages }, status: :bad_request
     end
   end
-  
 
   def delete
+    # check if current_user.id == upvote.user_id
+    # better safe than sorry
     @upvote = Upvote.find_by(id:params[:id])
     @upvote.destroy
     render json: { message: "Upvote Destroyed Successfully~"}
