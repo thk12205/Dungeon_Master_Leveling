@@ -2,11 +2,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
 article1 = Article.create(title: "title1",url: "url1.com" ,img_url: "imgurl.com/1", source:"source1", category_id:1)
 article2 = Article.create(title: "title2",url: "url2.com" ,img_url: "imgurl.com/2", source:"source2", category_id:2)
 article3 = Article.create(title: "title3",url: "url3.com" ,img_url: "imgurl.com/3", source:"source3", category_id:3)
 article4 = Article.create(title: "title4",url: "url4.com" ,img_url: "imgurl.com/4", source:"source4", category_id:4)
+article5 = Article.create(title: "title5", url: "url5.com",img_url: "imgurl.com/5", source:"source5", category_id:5)
+article6 = Article.create(title: "title6", url: "url6.com",img_url: "imgurl.com/6", source:"source6", category_id:6)
+article7 = Article.create(title: "title7", url: "url7.com",img_url: "imgurl.com/7", source:"source7", category_id:1)
+article8 = Article.create(title: "title8", url: "url8.com",img_url: "imgurl.com/8", source:"source8", category_id:2)
+article9 = Article.create(title: "title9", url: "url9.com",img_url: "imgurl.com/9", source:"source9", category_id:3)
+article10 = Article.create(title: "title10", url: "url10.com",img_url: "imgurl.com/10", source:"source10", category_id:4)
 
 category1 = Category.create(name:"name1", description:"description1", img_url:"imgurl.com/1" )
 category2 = Category.create(name:"name2", description:"description2", img_url:"imgurl.com/2" )
@@ -23,36 +28,3 @@ upvote5 = Upvote.create(user_id:2, article_id:1)
 upvote6 = Upvote.create(user_id:2, article_id:3)
 upvote7 = Upvote.create(user_id:3, article_id:2)
 upvote8 = Upvote.create(user_id:4, article_id:4)
-# create_table "articles", force: :cascade do |t|
-#   t.string "title"
-#   t.string "url"
-#   t.string "img_url"
-#   t.string "source"
-#   t.integer "category_id"
-#   t.datetime "created_at", precision: 6, null: false
-#   t.datetime "updated_at", precision: 6, null: false
-# end
-
-# create_table "categories", force: :cascade do |t|
-#   t.string "name"
-#   t.string "description"
-#   t.string "img_url"
-#   t.datetime "created_at", precision: 6, null: false
-#   t.datetime "updated_at", precision: 6, null: false
-# end
-
-# create_table "upvotes", force: :cascade do |t|
-#   t.integer "user_id"
-#   t.integer "article_id"
-#   t.datetime "created_at", precision: 6, null: false
-#   t.datetime "updated_at", precision: 6, null: false
-# end
-
-# create_table "users", force: :cascade do |t|
-#   t.string "username"
-#   t.string "email"
-#   t.string "password_digest"
-#   t.datetime "created_at", precision: 6, null: false
-#   t.datetime "updated_at", precision: 6, null: false
-# end
-

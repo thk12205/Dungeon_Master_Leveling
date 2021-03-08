@@ -1,0 +1,7 @@
+{
+  id: article.id,
+  title: article.title,
+  url: article.url,
+  img_url: article.img_url,
+  category_id: article.category_id,
+}

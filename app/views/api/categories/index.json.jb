@@ -1,3 +1,18 @@
 @categories.map do |category|
-  render partial: "category.json.jb", locals: {category: category}
+  category_output = render partial: "category.json.jb", locals: {category: category}
+  category_output[:articles] = category.articles.map do |article|
+    render partial: "api/articles/article.json.jb", locals: { article: article }
+  end
+  category_output
 end
+
+
+
+# @categories.map do |category|
+#   category = render partial: "category.json.jb", locals: {category: category}
+  
+#   category[:articles] = @category.articles.map do |article|
+#     render partial: "api/articles/article.json.jb", locals: { article: article }
+#   end
+#   category
+# end
