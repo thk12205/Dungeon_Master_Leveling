@@ -2,5 +2,4 @@
   id: user.id,
   username: user.username,
   email: user.email,
-  articles: user.articles
 }

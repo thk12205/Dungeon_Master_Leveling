@@ -1,5 +1,9 @@
 category = render partial: "category.json.jb", locals: {category: @category}
 category[:articles] = @category.articles.map do |article|
-  render partial: "api/articles/article.json.jb", locals: { article: article }
+  article_hash = render partial: "api/articles/article.json.jb", locals: { article: article }
+  if current_user
+    article_hash[:upvoted] = current_user.upvotes.find_by(article_id: article.id) ? true : false   #faster than upvote table lookup since limiting array
+  end
+  article_hash
 end
 category

@@ -4,6 +4,6 @@
   url: article.url,
   img_url: article.img_url,
   category_id: article.category_id,
-  upvotes_total: article.upvotes.count,
-  current_user_upvote: Upvote.find_by(user_id: current_user.id, article_id: article.id)
+  upvotes_total: article.upvotes.count, #sequel statement, okay, 
+  # current_user_upvote: Upvote.find_by(user_id: current_user.id, article_id: article.id)
 }

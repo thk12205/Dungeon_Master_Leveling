@@ -4,4 +4,5 @@ class Article < ApplicationRecord
   has_many :upvotes
   has_many :users, through: :upvotes
 
+
 end
