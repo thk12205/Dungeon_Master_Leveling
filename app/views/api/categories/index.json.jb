@@ -4,7 +4,6 @@
     article_hash = render partial: "api/articles/article.json.jb", locals: { article: article }
     if current_user
       article_hash[:upvoted] = current_user.upvotes.find_by(article_id: article.id) ? true : false   #faster than upvote table lookup since limiting array
-      article_hash[:upvote_id] = current_user.upvotes.find_by(article_id: article.id).id
     end
     article_hash
   end

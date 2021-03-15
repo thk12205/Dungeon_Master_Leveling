@@ -24,6 +24,11 @@ class Api::UpvotesController < ApplicationController
   def delete
     # check if current_user.id == upvote.user_id
     # better safe than sorry
+    p "current_user.id = #{current_user.id}"
+    p "params[:article_id] = #{params[:article_id]}"
+    p "@upvote = #{@upvote}"
+
+
     @upvote = Upvote.find_by(user_id: current_user.id, article_id: params[:article_id])
     @upvote.destroy
     render json: { message: "Upvote Destroyed Successfully~"}
