@@ -14,12 +14,12 @@ user10 = User.create(username: "user10", email: "user10@gmail.com", password: "p
 
 
 
-category1 = Category.create(name:"STR", description:"description1 str", img_url:"imgurl.com/1" )
-category2 = Category.create(name:"DEX", description:"description2 dex", img_url:"imgurl.com/2" )
-category3 = Category.create(name:"CON", description:"description3 con", img_url:"imgurl.com/3" )
-category4 = Category.create(name:"INT", description:"description4 int", img_url:"imgurl.com/4" )
-category5 = Category.create(name:"WIS", description:"description5 wis", img_url:"imgurl.com/5" )
-category6 = Category.create(name:"CHA", description:"description6 cha", img_url:"imgurl.com/6" )
+category1 = Category.create(name:"STR", description:"Monsters, Combat, Challenges", img_url:"imgurl.com/1" )
+category2 = Category.create(name:"DEX", description:"Improvization and Organization", img_url:"imgurl.com/2" )
+category3 = Category.create(name:"CON", description:"World Building and Plot", img_url:"imgurl.com/3" )
+category4 = Category.create(name:"INT", description:"Rules, Gold, and Balance", img_url:"imgurl.com/4" )
+category5 = Category.create(name:"WIS", description:"Player Management", img_url:"imgurl.com/5" )
+category6 = Category.create(name:"CHA", description:"Characters: The Good, The Bad, The Ugly", img_url:"imgurl.com/6" )
 
 
 

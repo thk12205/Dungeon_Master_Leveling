@@ -1,5 +1,7 @@
 user = render partial: "user.json.jb", locals: {user: @user}
 user[:articles] = @user.articles.map do |article|
-  render partial: "api/articles/article.json.jb", locals: { article: article }
+  article_hash = render partial: "api/articles/article.json.jb", locals: { article: article }
+  article_hash[:upvote_id] = current_user.upvotes.find_by(article_id: article.id).id
+  article_hash
 end
 user
