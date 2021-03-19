@@ -12,12 +12,18 @@ Rails.application.routes.draw do
     patch "/users/:id" => "users#update"
     delete "/users/:id" => "users#destroy"
 
-    #sessions
+    #session
     post "/sessions" => "sessions#create"
 
     #category
     get "/categories" => "categories#index"
     get "/categories/:id" => "categories#show"
+
+    #article
+    post "/articles" => "articles#create"
+    get "/articles/:id" => "articles#show"
+    patch "/articles/:id" => "articles#update"
+    delete "/articles/:id" => "articles#destroy"
 
     #upvote
     post "/upvotes" => "upvotes#create"
