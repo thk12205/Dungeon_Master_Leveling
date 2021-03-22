@@ -9,7 +9,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find_by(id:params[:id])
+    @category = Category.find_by("name iLIKE ?",params[:slug])
     render "show.json.jb"
   end
 

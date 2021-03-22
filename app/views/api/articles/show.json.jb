@@ -1,5 +1,10 @@
 article = render partial: "article.json.jb", locals: {article: @article}
 article[:comments] = @article.comments.map do |comment|
   comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+  comment_hash[:user] = render partial: "api/users/user.json.jb", locals: { user: comment.user }
+  comment_hash
+end
+if current_user
+  article[:upvoted] = current_user.upvotes.find_by(article_id: @article.id) ? true : false   #faster than upvote table lookup since limiting array
 end
 article

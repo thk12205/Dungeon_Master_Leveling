@@ -6,9 +6,13 @@ class Api::UsersController < ApplicationController
     @user = User.new(
       username: params[:username],
       email: params[:email],
+      img_url: params[:img_url],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
+
+    @user.img_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabEklZavHRqp-_i-3CxpBH9y44fVm3fWYuQ&usqp=CAU" unless @user.img_url
+
     if @user.save
       render "show.json.jb"
     else
@@ -38,6 +42,8 @@ class Api::UsersController < ApplicationController
     else
       @user.username = params[:username] || @user.username
       @user.email = params[:email] || @user.email
+      @user.img_url = params[:img_url] || @user.img_url
+
       if params[:password]
         @user.password = params[:password]
         @user.password_confirmation = params[:password_confirmation]

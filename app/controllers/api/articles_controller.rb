@@ -11,6 +11,9 @@ class Api::ArticlesController < ApplicationController
       video: params[:video],
       creator_id: current_user.id,
     )
+
+    @article.img_url = "https://lh3.googleusercontent.com/proxy/lcOcO4O-3SYcEU6pLQiDj_3STx_GYtG6bIZw-d3eupIZfCWpi1KSeHvx-NiqbZR07j7vcPPBSJIEjy-83wAjH9OJ2Xc7KjLDS2y_QCBA641SwQ" unless @article.img_url
+
     if @article.save
       render "show.json.jb"
     else
