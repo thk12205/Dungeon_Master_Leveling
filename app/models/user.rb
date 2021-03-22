@@ -3,6 +3,7 @@ class User < ApplicationRecord
   
   has_many :upvotes
   has_many :articles, through: :upvotes
+  has_many :comments
 
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true

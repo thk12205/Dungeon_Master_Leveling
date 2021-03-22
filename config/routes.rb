@@ -29,5 +29,11 @@ Rails.application.routes.draw do
     post "/upvotes" => "upvotes#create"
     delete "/upvotes/:article_id" => "upvotes#delete"
 
+    #comments
+    post "/comments" => "comments#create"
+    # get "/comments/:id" => "comments#show"
+    # patch "/comments/:id" => "comments#update"
+    delete "/comments/:id" => "comments#destroy"
+
   end
 end

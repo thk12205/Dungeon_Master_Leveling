@@ -1,1 +1,5 @@
-render partial: "article.json.jb", locals: {article: @article}
+article = render partial: "article.json.jb", locals: {article: @article}
+article[:comments] = @article.comments.map do |comment|
+  comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
+end
+article
