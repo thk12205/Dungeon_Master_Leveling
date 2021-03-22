@@ -8,7 +8,8 @@ class Api::ArticlesController < ApplicationController
       source: params[:source], 
       category_id: params[:category_id],
       body: params[:body], 
-      video: params[:video]
+      video: params[:video],
+      creator_id: current_user.id,
     )
     if @article.save
       render "show.json.jb"

@@ -9,4 +9,5 @@
   # current_user_upvote: Upvote.find_by(user_id: current_user.id, article_id: article.id)
   body: article.body,
   video: article.video,
+  creator_id: article.creator_id
 }
