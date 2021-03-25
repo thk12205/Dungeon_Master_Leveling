@@ -9,5 +9,9 @@
   # current_user_upvote: Upvote.find_by(user_id: current_user.id, article_id: article.id)
   body: article.body,
   video: article.video,
-  creator_id: article.creator_id
+  creator_id: article.creator_id,
+  #turn into advanced partial later
+  # creator_username: User.find_by(id:article.creator_id).username,
+  # category_name: Category.find_by(id:article.category_id).name,
+  # category_description: Category.find_by(id:article.category_id).category_description
 }
