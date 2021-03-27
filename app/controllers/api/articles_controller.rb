@@ -12,7 +12,7 @@ class Api::ArticlesController < ApplicationController
       creator_id: current_user.id,
     )
 
-    @article.img_url = "https://www.worldanvil.com/uploads/images/3ffba7410667d1be71921ff5b1f68f70.jpg" unless @article.img_url
+    @article.img_url = "https://i.pinimg.com/originals/d6/70/4f/d6704f2c3b42bd706887581ce3d81489.jpg" unless @article.img_url
 
     if @article.save
       render "show.json.jb"
