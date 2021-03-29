@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :creator_articles
   has_many :created_articles, through: :creator_articles, source: :article
+  has_many :reads
+  has_many :read_articles, through: :creator_articles, source: :article
 
 
   validates :email, presence: true, uniqueness: true

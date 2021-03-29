@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_052713) do
+ActiveRecord::Schema.define(version: 2021_03_29_230547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2021_03_29_052713) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reads", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "upvotes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
@@ -65,6 +72,18 @@ ActiveRecord::Schema.define(version: 2021_03_29_052713) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img_url"
+    t.string "quote"
+    t.string "alignment"
+    t.string "games"
+    t.integer "gold"
+    t.integer "exp"
+    t.integer "str"
+    t.integer "dex"
+    t.integer "con"
+    t.integer "int"
+    t.integer "wis"
+    t.integer "cha"
+    t.integer "armor_rating"
   end
 
 end

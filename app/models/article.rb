@@ -6,6 +6,8 @@ class Article < ApplicationRecord
   has_many :comments
   has_many :creator_articles
   has_many :creators, through: :creator_articles, source: :user
+  has_many :reads
+  has_many :readers, through: :creator_articles, source: :user
 
   validates :title, presence: true
   validates :source, presence: true
