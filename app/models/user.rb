@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :upvotes
   has_many :articles, through: :upvotes
   has_many :comments
-  # has_many :articles, through: :creatorarticles
-  has_many :created_articles, through: :creator_article, source: :article
+  has_many :creator_articles
+  has_many :created_articles, through: :creator_articles, source: :article
 
 
   validates :email, presence: true, uniqueness: true
