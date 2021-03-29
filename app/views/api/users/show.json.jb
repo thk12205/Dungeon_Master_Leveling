@@ -1,4 +1,5 @@
 user = render partial: "user.json.jb", locals: {user: @user}
+user[:email] = @user.email
 user[:articles] = @user.articles.map do |article|
   article_hash = render partial: "api/articles/article.json.jb", locals: { article: article }
   if current_user

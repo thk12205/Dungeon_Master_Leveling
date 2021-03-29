@@ -1,4 +1,6 @@
 article = render partial: "article.json.jb", locals: {article: @article}
+article[:user] = render partial: "api/users/user.json.jb", locals: { user: User.find_by(id:@article.creator_id) }
+article[:category] = render partial: "api/categories/category.json.jb", locals: { category: Category.find_by(id:@article.category_id) }
 article[:comments] = @article.comments.map do |comment|
   comment_hash = render partial: "api/comments/comment.json.jb", locals: { comment: comment }
   comment_hash[:user] = render partial: "api/users/user.json.jb", locals: { user: comment.user }

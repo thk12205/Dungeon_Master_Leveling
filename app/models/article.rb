@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   has_many :upvotes
   has_many :users, through: :upvotes
   has_many :comments
+  # has_many :users, through: :creatorarticles
+  has_many :creators, through: :creator_article, source: :user
 
   validates :title, presence: true
   validates :source, presence: true
