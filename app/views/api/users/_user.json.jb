@@ -2,4 +2,5 @@
   id: user.id,
   username: user.username,
   img_url: user.img_url,
+  created_at: user.created_at, #joined date
 }
