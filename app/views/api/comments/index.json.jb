@@ -1,0 +1,7 @@
+comments_hash = {}
+comments_hash[:comments] = @comments.map do |comment|
+  comment_hash = render partial: "comment.json.jb", locals: {comment: comment}
+  comment_hash
+end
+comments_hash[:user] = render partial: "api/users/user.json.jb", locals: {user: @user}
+comments_hash

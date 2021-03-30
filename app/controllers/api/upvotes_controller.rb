@@ -21,6 +21,18 @@ class Api::UpvotesController < ApplicationController
 
   end
 
+  def update
+    @comment = Comment.find_by(id:params[:id])
+    @comment.body = params[:body] || @comment.body
+
+    if @comment.save
+      render "show.json.jb"
+    else
+      render json: { errors: @comment.errors.full_messages }, status: :bad_request
+    end
+    # end
+  end
+
   def delete
     # check if current_user.id == upvote.user_id
     # better safe than sorry
