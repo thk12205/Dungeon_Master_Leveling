@@ -8,6 +8,8 @@ class Article < ApplicationRecord
   has_many :creators, through: :creator_articles, source: :user
   has_many :reads
   has_many :readers, through: :creator_articles, source: :user
+  has_many :upvote_strs
+  has_many :str_upvoted_users, through: :upvote_strs, source: :article
 
   validates :title, presence: true
   validates :source, presence: true

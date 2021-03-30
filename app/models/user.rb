@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :created_articles, through: :creator_articles, source: :article
   has_many :reads
   has_many :read_articles, through: :creator_articles, source: :article
+  has_many :upvote_strs
+  has_many :str_upvoted_articles, through: :upvote_strs, source: :article
 
 
   validates :email, presence: true, uniqueness: true

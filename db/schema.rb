@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_230547) do
+ActiveRecord::Schema.define(version: 2021_03_30_162044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,11 +58,24 @@ ActiveRecord::Schema.define(version: 2021_03_29_230547) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "upvote_strs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "upvotes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "str"
+    t.boolean "dex"
+    t.boolean "con"
+    t.boolean "int"
+    t.boolean "wis"
+    t.boolean "cha"
   end
 
   create_table "users", force: :cascade do |t|
