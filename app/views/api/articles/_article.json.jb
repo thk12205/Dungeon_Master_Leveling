@@ -10,8 +10,6 @@
   body: article.body,
   video: article.video,
   creator_id: article.creator_id,
-  #turn into advanced partial later
-  # creator_username: User.find_by(id:article.creator_id).username,
-  # category_name: Category.find_by(id:article.category_id).name,
-  # category_description: Category.find_by(id:article.category_id).category_description
+  created_at: article.created_at,
+  updated_at: article.updated_at,
 }
