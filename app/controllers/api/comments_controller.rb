@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @user = current_user
-    @comments = Comment.where("user_id = #{@user.id}") #.show if user_id = 
+    @comments = Comment.where("user_id = #{@user.id}")
     render "index.json.jb" 
   end
 

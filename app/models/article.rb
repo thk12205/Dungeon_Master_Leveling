@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
 
   belongs_to :category
-  belongs_to :article_marker
+  has_many :article_markers
   has_many :upvotes
   has_many :users, through: :upvotes
   has_many :comments
