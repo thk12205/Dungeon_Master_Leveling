@@ -44,6 +44,17 @@ class Api::UsersController < ApplicationController
       @user.username = params[:username] || @user.username
       @user.email = params[:email] || @user.email
       @user.img_url = params[:img_url] || @user.img_url
+      @user.quote = params[:quote] || @user.quote
+      @user.alignment = params[:alignment] || @user.alignment
+      @user.games = params[:games] || @user.games
+      @user.gold = params[:gold] || @user.gold
+      @user.exp = params[:exp] || @user.exp
+      @user.str = params[:str] || @user.str
+      @user.dex = params[:dex] || @user.dex
+      @user.con = params[:con] || @user.con
+      @user.int = params[:int] || @user.int
+      @user.wis = params[:wis] || @user.wis
+      @user.armor_rating = params[:armor_rating] || @user.armor_rating
 
       if params[:password]
         @user.password = params[:password]
