@@ -3,7 +3,9 @@ class User < ApplicationRecord
   
   has_many :upvotes
   has_many :articles, through: :upvotes
+  has_many :campaigns
   has_many :comments
+  
   has_many :creator_articles
   has_many :created_articles, through: :creator_articles, source: :article
   has_many :reads
@@ -18,10 +20,10 @@ class User < ApplicationRecord
   has_many :int_upvoted_articles, through: :upvote_ints, source: :article
   has_many :upvote_wdms
   has_many :wdm_upvoted_articles, through: :upvote_wdms, source: :article
-  # has_many :upvote_wiss
-  # has_many :wis_upvoted_articles, through: :upvote_wiss, source: :article
   has_many :upvote_chas
   has_many :cha_upvoted_articles, through: :upvote_chas, source: :article
+
+
 
 
   validates :email, presence: true, uniqueness: true

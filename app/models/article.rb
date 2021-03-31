@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
 
   belongs_to :category
+  belongs_to :article_marker
   has_many :upvotes
   has_many :users, through: :upvotes
   has_many :comments
@@ -18,8 +19,6 @@ class Article < ApplicationRecord
   has_many :int_upvoted_users, through: :upvote_ints, source: :user
   has_many :upvote_wdms
   has_many :wdm_upvoted_users, through: :upvote_wdms, source: :user
-  # has_many :upvote_wiss
-  # has_many :wis_upvoted_users, through: :upvote_wiss, source: :user
   has_many :upvote_chas
   has_many :cha_upvoted_users, through: :upvote_chas, source: :user
   
