@@ -1,0 +1,6 @@
+{
+  id: upvote_dex.id,
+  user_id: upvote_dex.user_id,
+  article_id: upvote_dex.article_id,
+  created_at: upvote_dex.created_at,
+}

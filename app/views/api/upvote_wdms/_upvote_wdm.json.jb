@@ -1,0 +1,6 @@
+{
+  id: upvote_wdm.id,
+  user_id: upvote_wdm.user_id,
+  article_id: upvote_wdm.article_id,
+  created_at: upvote_wdm.created_at,
+}

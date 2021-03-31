@@ -28,6 +28,24 @@ Rails.application.routes.draw do
     #upvote
     post "/upvotes" => "upvotes#create"
     delete "/upvotes/:article_id" => "upvotes#delete"
+    #upvote
+    post "/upvote_strs" => "upvote_strs#create"
+    delete "/upvote_strs/:article_id" => "upvote_strs#delete"
+    #upvote
+    post "/upvote_dexs" => "upvote_dexs#create"
+    delete "/upvote_dexs/:article_id" => "upvote_dexs#delete"
+    #upvote
+    post "/upvote_cons" => "upvote_cons#create"
+    delete "/upvote_cons/:article_id" => "upvote_cons#delete"
+    #upvote
+    post "/upvote_ints" => "upvote_ints#create"
+    delete "/upvote_ints/:article_id" => "upvote_ints#delete"
+    #upvote
+    post "/upvote_wdms" => "upvote_wdms#create"
+    delete "/upvote_wdms/:article_id" => "upvote_wdms#delete"
+    #upvote
+    post "/upvote_chas" => "upvote_chas#create"
+    delete "/upvote_chas/:article_id" => "upvote_chas#delete"
 
     #comments
     get "/comments" => "comments#index"    

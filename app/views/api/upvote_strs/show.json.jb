@@ -1,0 +1,1 @@
+render partial: "upvote_str.json.jb", locals: {upvote_str: @upvote_str}
