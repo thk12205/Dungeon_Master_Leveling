@@ -8,7 +8,16 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       img_url: params[:img_url],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
+      gold: 0,
+      exp: 0,
+      str: 10,
+      dex: 10,
+      con: 10,
+      int: 10,
+      wis: 10,
+      cha: 10,
+      armor_rating: 10,
     )
 
     @user.img_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabEklZavHRqp-_i-3CxpBH9y44fVm3fWYuQ&usqp=CAU" unless @user.img_url
@@ -21,23 +30,15 @@ class Api::UsersController < ApplicationController
   end
 
 
-  # get "/users/:id" => "users#show"
-
   def show
     @user = User.find_by(id:params[:id])
     render "show.json.jb"
   end
-  
-  # update "/users/:id" => "users#update"
+
   
   def update
     @user = User.find_by(id:params[:id])
-    #checks if current user is trying to edit
-    # p "++++++++++++++++++++++++++++++++++++"
-    # p "current_user.id: #{current_user.id}"
-    # p "params[:id].to_i: #{params[:id].to_i}"
     unless current_user.id == params[:id].to_i
-      #render ends the rest of update's function
       render json: { error: "incorrect user"}, status: :unauthorized
     else
       @user.username = params[:username] || @user.username
@@ -48,7 +49,6 @@ class Api::UsersController < ApplicationController
         @user.password = params[:password]
         @user.password_confirmation = params[:password_confirmation]
       end
-      #no email changing
       #maybe change pw later
       if @user.save
         render "show.json.jb"
@@ -58,16 +58,10 @@ class Api::UsersController < ApplicationController
     end
   end
   
-  # destroy "/users/:id" => "users#destroy"
   
   def destroy
     @user = User.find_by(id:params[:id])
-    #checks if current user is trying to destroy
-    # p "++++++++++++++++++++++++++++++++++++"
-    # p "current_user.id: #{current_user.id}"
-    # p "params[:id].to_i: #{params[:id].to_i}"
     unless current_user.id == params[:id].to_i
-      #render ends the rest of update's function
       render json: { error: "incorrect user"}, status: :unauthorized
     else
       @user.destroy
