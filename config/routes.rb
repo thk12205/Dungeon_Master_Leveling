@@ -25,6 +25,25 @@ Rails.application.routes.draw do
     patch "/articles/:id" => "articles#update"
     delete "/articles/:id" => "articles#destroy"
 
+    #campaign
+    get "/campaigns" => "campaigns#index"   
+    post "/campaigns" => "campaigns#create"
+    get "/campaigns/:id" => "campaigns#show"
+    patch "/campaigns/:id" => "campaigns#update"
+    delete "/campaigns/:id" => "campaigns#destroy"
+    #campaign session
+    get "/campaign_sessions" => "campaign_sessions#index"   
+    post "/campaign_sessions" => "campaign_sessions#create"
+    get "/campaign_sessions/:id" => "campaign_sessions#show"
+    patch "/campaign_sessions/:id" => "campaign_sessions#update"
+    delete "/campaign_sessions/:id" => "campaign_sessions#destroy"
+    #article marker
+    get "/article_markers" => "article_markers#index"   
+    post "/article_markers" => "article_markers#create"
+    get "/article_markers/:id" => "article_markers#show"
+    patch "/article_markers/:id" => "article_markers#update"
+    delete "/article_markers/:id" => "article_markers#destroy"
+
     #upvote
     post "/upvotes" => "upvotes#create"
     delete "/upvotes/:article_id" => "upvotes#delete"
