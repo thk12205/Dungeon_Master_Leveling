@@ -1,0 +1,1 @@
+render partial: "creator_article.json.jb", locals: {creator_article: @creator_article}

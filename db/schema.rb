@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_170500) do
+ActiveRecord::Schema.define(version: 2021_03_31_072139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_markers", force: :cascade do |t|
+    t.integer "exp"
+    t.boolean "utilized"
+    t.text "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -26,6 +34,22 @@ ActiveRecord::Schema.define(version: 2021_03_30_170500) do
     t.boolean "video"
     t.integer "creator_id"
     t.text "img_url"
+  end
+
+  create_table "campaign_sessions", force: :cascade do |t|
+    t.datetime "date"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "name"
+    t.string "game"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|

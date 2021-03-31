@@ -1,0 +1,1 @@
+render partial: "read.json.jb", locals: {read: @read}

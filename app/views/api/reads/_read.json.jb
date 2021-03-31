@@ -1,0 +1,6 @@
+{
+  id: read.id,
+  user_id: read.user_id,
+  article_id: read.article_id,
+  created_at: read.created_at,
+}

@@ -1,0 +1,2 @@
+class ArticleMarker < ApplicationRecord
+end
