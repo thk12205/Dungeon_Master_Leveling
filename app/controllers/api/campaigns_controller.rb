@@ -33,7 +33,8 @@ class Api::CampaignsController < ApplicationController
   
   def update
     @campaign = Campaign.find_by(id:params[:id])
-    unless current_user.id == params[:id].to_i
+    p current_user.id
+    unless current_user.id == @campaign.user_id
       render json: { error: "incorrect user"}, status: :unauthorized
     else
       #leaving out user_id, no need to give randomly to other users
@@ -56,7 +57,7 @@ class Api::CampaignsController < ApplicationController
   
   def destroy
     @campaign = Campaign.find_by(id:params[:id])
-    unless current_user.id == params[:id].to_i
+    unless current_user.id == @campaign.user_id
       render json: { error: "incorrect user"}, status: :unauthorized
     else
       @campaign.destroy

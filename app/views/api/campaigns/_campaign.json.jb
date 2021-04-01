@@ -1,0 +1,10 @@
+{
+  id: campaign.id,
+  start_date: campaign.start_date,
+  end_date: campaign.end_date,
+  name: campaign.name,
+  game: campaign.game,
+  user_id: campaign.user_id,
+  created_at: campaign.created_at,
+  updated_at: campaign.updated_at,
+}

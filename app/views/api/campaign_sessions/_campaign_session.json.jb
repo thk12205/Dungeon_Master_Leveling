@@ -1,0 +1,8 @@
+{
+  id: campaign_session.id,
+  date: campaign_session.date,
+  campaign_id: campaign_session.campaign_id,
+  name: campaign_session.name,
+  created_at: campaign_session.created_at,
+  updated_at: campaign_session.updated_at,
+}

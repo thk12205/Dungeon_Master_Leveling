@@ -1,0 +1,10 @@
+{
+  id: article_marker.id,
+  exp: article_marker.exp,
+  utilized: article_marker.utilized,
+  notes: article_marker.notes,
+  article_id: article_marker.article_id,
+  campaign_session_id: article_marker.campaign_session_id,
+  created_at: article_marker.created_at,
+  updated_at: article_marker.updated_at,
+}

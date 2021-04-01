@@ -1,0 +1,11 @@
+@article_markers.map do |article_marker|
+  article_marker_hash = render partial: "article_marker.json.jb", locals: {article_marker: article_marker}
+  #article_marker_hash[:] = render partial: "///article_marker sessions" loop
+    #article_marker_hash[:][:] = render partial: "///article_markers" loop
+      #article_marker_hash[:][:][:] articles = render partial: "///article.json"
+  article_marker_hash 
+end
+# article_markers_hash[:user] = render partial: "api/users/user.json.jb", locals: {user: @user}
+# article_markers_hash
+
+#list out entire api at one point

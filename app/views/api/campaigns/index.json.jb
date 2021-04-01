@@ -1,0 +1,11 @@
+@campaigns.map do |campaign|
+  campaign_hash = render partial: "campaign.json.jb", locals: {campaign: campaign}
+  #campaign_hash[:] = render partial: "///campaign sessions" loop
+    #campaign_hash[:][:] = render partial: "///article_markers" loop
+      #campaign_hash[:][:][:] articles = render partial: "///article.json"
+  campaign_hash 
+end
+# campaigns_hash[:user] = render partial: "api/users/user.json.jb", locals: {user: @user}
+# campaigns_hash
+
+#list out entire api at one point
