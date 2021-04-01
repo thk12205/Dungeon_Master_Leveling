@@ -1,3 +1,19 @@
 campaign = render partial: "campaign.json.jb", locals: { campaign: @campaign }
 #campaign[:user] = render partial: "api/users/user.json.jb", locals: { user: @user }
 campaign
+
+campaign_hash = render partial: "campaign.json.jb", locals: {campaign: @campaign}
+campaign_hash[:campaign_sessions] = @campaign.campaign_sessions.map do |campaign_session|
+  campaign_session_hash = render partial: "api/campaign_sessions/campaign_session.json.jb", locals: { campaign_session: campaign_session }
+  campaign_session_hash[:article_markers] = campaign_session.article_markers do |article_marker|
+    article_marker_hash = render partial: "api/article_markers/article_marker.json.jb", locals: { article_marker: article_marker }
+    article_marker_hash[:article] = article_marker.article do |article|
+      article_hash = render partial: "api/articles/article.json.jb", locals: { article: article }
+      article_hash
+    end
+    article_marker_hash
+  end
+  campaign_session_hash
+end
+
+campaign_hash
